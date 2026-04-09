@@ -13,7 +13,9 @@
 (provide (rename-out [make-z3 z3]) z3?)
 
 (define-runtime-path bin-path (build-path ".." ".." ".." "bin"))
-(define z3-path (build-path bin-path "z3"))
+(define z3-path (cond [(eq? (system-type) 'unix)
+                       (find-executable-path "z3")]
+                      [else (build-path bin-path "z3")]))
 (define z3-opts '("-smt2" "-in"))
 
 (define default-options
@@ -21,7 +23,7 @@
         ':auto-config 'true
         ':smt.relevancy 2
         ':smt.mbqi.max_iterations 10000000))
-       ; ':pp.decimal 'true))
+; ':pp.decimal 'true))
 
 (define (make-z3 [solver #f] #:options [options (hash)] #:logic [logic #f] #:path [path #f])
   (define config
@@ -93,9 +95,9 @@
 
 (define (set-core-options server)
   (server-write server
-    (set-option ':produce-unsat-cores 'true)
-    (set-option ':auto-config 'false)
-    (set-option ':smt.relevancy 0)))
+                (set-option ':produce-unsat-cores 'true)
+                (set-option ':auto-config 'false)
+                (set-option ':smt.relevancy 0)))
 
 (define (numeric-terms ts caller)
   (for/list ([t ts] #:unless (or (real? t) (bv? t)))
