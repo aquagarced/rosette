@@ -1,3 +1,9 @@
+***FORK OF ROSETTE***
+=====================
+* This fork incorporates all of these pull requests left open on the original repo: [#297](https://github.com/emina/rosette/pull/297), [#281](https://github.com/emina/rosette/pull/281), [#280](https://github.com/emina/rosette/pull/280), [#279](https://github.com/emina/rosette/pull/279), [#278](https://github.com/emina/rosette/pull/278), [#208](https://github.com/emina/rosette/pull/208)
+
+* It also changes the hard coded path to the z3 executable to use [find-executable-path](https://docs.racket-lang.org/reference/Filesystem.html#%28def._%28%28lib._racket%2Fprivate%2Fmisc..rkt%29._find-executable-path%29%29) so that it works on unix-like systems with non-standard binary locations (e.g. NixOS)
+
 The Rosette Language
 ====================
 
