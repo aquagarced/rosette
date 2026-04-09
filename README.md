@@ -9,21 +9,9 @@ The Rosette Language
 
 [![Tests](https://github.com/emina/rosette/workflows/Tests/badge.svg)](https://github.com/emina/rosette/actions?query=workflow%3ATests)
 
-[Rosette](http://emina.github.io/rosette/) is a solver-aided programming language that extends [Racket](http://racket-lang.org) with language constructs for program synthesis, verification, and more. This repository includes the source code for Rosette, as well as several example solver-aided DSLs.
-
-## Installing Rosette
-
-The easiest way to install Rosette is from Racket's package manager:
-
-* Download and install Racket 8.1 or later from http://racket-lang.org
-
-* Use Racket's `raco` tool to install Rosette:
-
-  `$ raco pkg install rosette`   
+[Rosette](http://emina.github.io/rosette/) is a solver-aided programming language that extends [Racket](http://racket-lang.org) with language constructs for program synthesis, verification, and more. This repository includes the source code for Rosette, as well as several example solver-aided DSLs.  
 
 ### Installing from source
-
-Alternatively, you can install Rosette from source:
 
 * Download and install Racket 8.1 or later from http://racket-lang.org
 
